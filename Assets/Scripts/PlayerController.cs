@@ -24,6 +24,7 @@ public class PlayerController : MonoBehavior
 		Vector3 rotMovement = transform.TransformDirection(move);
 		controller.Move(rotMovement);
 		
+		Debug.Log(Input.gyro.attitude);
 		ApplyGyroRotation();
 		ApplyCalibration();
 		
