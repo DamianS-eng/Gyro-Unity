@@ -14,3 +14,9 @@ Project template should include a 3D Plane Object for the Ground and a Capsule 3
   Add a Character Controller component.
   
   In the Assets/Scripts folder of the project, create a C# Script called *PlayerController.cs*, and add the script as a component to the player model.
+
+### General Tips
+
+To check controller input:
+
+Window -> Analysis -> Input Debugger
