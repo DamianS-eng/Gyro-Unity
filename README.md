@@ -17,9 +17,21 @@ Open your Project in Unity, and go to Project Settings > Graphics > URP Global S
 
 ## Initial Camera Setup from Cinemachine
 
+### Create a second virtual camera.
 
+On the Cinemachine PlayerFollowCamera, adjust the offset values and Camera Side: Body > Shoulder Offset (X & Y).
+Duplicate the Camera, rename it to PlayerFollowCamera. Give it a higher priority value than the first camera. Adjust FOV and Camera Distance to zoom in.
 
-### General Tips
+- Create a new C# script, drag the script to the PlayerArmature as a new component. This will reference the created duplicate Aim Camera.
+- Add a new action in the Input Actions Asset.
+  - Note that the PlayerArmature uses Send Messages behavior for Player Input, which is consistent throughout the demo project. Invoking Unity events will be worthwhile in the future.
+- Jump and Sprint actions are already provided in the Inputs C# script next to the Input Actions Asset, in that script add Aim variable and functions similar to those.
+- In the created C# script, import the Inputs and get the component on Awake(), then set the active camera on the condition of the "aim" parameter from the Inputs.
+  - Adjust the main Cinemachine default transition settings: CinemachineBrain > Default Blend
+- Modify the given Controller script to add extra parameters such as sensitivity on Aim and look-over shoulder
+- Create a crosshair using the UI > Canvas, and an Image inside the Canvas.
+
+## General Tips
 
 #### To check controller input:
 
